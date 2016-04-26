@@ -1,23 +1,23 @@
 angular.module('meetup', [
-  // 'ui.bootstrap',
-  'mm.foundation',
+  'ui.bootstrap',
   'ui.router',
   'ngAnimate',
-  'meetup.about'
+  'meetup.about',
+  'meetup.home'
 ])
 // see zibzoo for more exmpales of how it works
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
      .state('index', {
-        templateUrl: 'main/mainView.html',
+        templateUrl: 'home/home.html',
         url: '/',
+        controller: 'Home'
+      })
+      .state('about', {
+        templateUrl: 'main/mainView.html',
+        url: '/about',
         controller: 'About'
       })
-      // .state('game', {
-      //   templateUrl: 'gameroom/game.html',
-      //   url: '/game',
-      //   controller: 'Board'
-      // })
 
       $urlRouterProvider.otherwise('/');
 

@@ -7,13 +7,14 @@
 <!-- Custome CSS -->
 <link rel="stylesheet" href="css/animation.css">
 <link rel="stylesheet" href="css/index.css">
+<!-- Bootstrap CSS-->
+<link rel="stylesheet" href="/bower_modules/bootstrap/dist/css/bootstrap.css">
 
 <!-- Angular-->
 <script src="/bower_modules/angular/angular.js"></script>
 <!-- Angular UI Bootstrap -->
-<!--<script src="/bower_modules/angular-bootstrap/ui-bootstrap.js"></script>-->
-<!-- Angular Foundation -->
-<script src="/bower_modules/angular-foundation/mm-foundation.js"></script>
+<script src="/bower_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
 <!-- Angular UI router-->
 <script src="/bower_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 <!-- Angular Animate -->
@@ -21,23 +22,24 @@
 
 <!-- JS FILES-->
 <script src="app.js"></script>
-<script src="gameroom/boardFactory.js"></script>
-<script src="gameroom/boardCtrl.js"></script>
 <script src="main/mainCtrl.js"></script>
+<script src="home/homeCtrl.js"></script>
 
 <!-- HTML/ANGULAR-->
 <body ng-app="meetup">
 
   <div class="row">
     <div class="col-md-8">
-      <h3>TeamUp Cosplay</h3>
+      <h2 ui-sref="index">TeamUp Cosplay</h2>
     </div>
     <div class="col-md-4 loginSelection">
-      <button class="button">Login</button>
-      <select name="Select a Project" id=""> Projects </select>
+      <div>
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+      <div>
+        <select name="Select a Project" id=""> Projects </select>
+      </div>
     </div>
-    <!--<a ui-sref="index">Homes</a>-->
-    <!--<a ui-sref="game">Game</a>-->
   </div class="col-md-12">
  <hr>
 
@@ -47,9 +49,9 @@
 
   <hr>
   <footer>
-    <div><p>Contribute</p></div>
-    <div><p>About Us</p></div>
-    <div><p>Contact Us</p></div>
+    <div class="col-md-4 text-center"><p>Contribute</p></div>
+    <div class="col-md-4 text-center" ui-sref="about"><p>About Us</p></div>
+    <div class="col-md-4 text-center"><p>Contact Us</p></div>
   </footer>
 
 
