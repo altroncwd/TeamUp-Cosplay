@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="rts">
+<head>
+  <meta charset="UTF-8">
+  <title>RTS Chess</title>
+</head>
+<link rel="stylesheet" href="css/animation.css">
+
+
+<body>
+  <div>
+    <h3>Just so I know something is here too.........</h3>
+    <a ui-sref="index">Homes</a>
+    <a ui-sref="game">Game</a>
+  </div>
+ <hr>
+
+  <section class="container main" role="main">
+    <div ui-view></div>
+  </section>
+
+  <script src="/bower_modules/angular/angular.js"></script>
+  <script src="/bower_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/bower_modules/angular-animate/angular-animate.js"/></script>
+  <script src="app.js"></script>
+  <script src="gameroom/boardFactory.js"></script>
+  <script src="gameroom/boardCtrl.js"></script>
+  <script src="main/mainCtrl.js"></script>
+</body>
+</html>

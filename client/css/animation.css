@@ -1,0 +1,53 @@
+.ng-enter {
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.ng-enter-stagger {
+  transition-delay: 0.1s;
+}
+
+.ng-enter-active {
+  opacity: 1;
+}
+
+.ng-leave-stagger {
+  transition-delay: 0.1s;
+}
+
+.ng-leave {
+  transition: 0.75s;
+  opacity: 1;
+}
+
+.ng-leave-active {
+  opacity: 0;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  display: inline-block
+}
+
+.black {
+  background-color: #404040;
+  /*border: 1px solid black;*/
+  /*border-radius: 4px;*/
+}
+
+.board {
+  height: 800px;
+  width: 800px;
+  border: 2px solid black;
+}
+
+.dot {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  background-color: orangered;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+}
