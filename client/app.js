@@ -1,9 +1,9 @@
-angular.module('rts', [
+angular.module('meetup', [
+  // 'ui.bootstrap',
+  'mm.foundation',
   'ui.router',
   'ngAnimate',
-  'rts.about',
-  'rts.board.logic',
-  'rts.board'
+  'meetup.about'
 ])
 // see zibzoo for more exmpales of how it works
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -13,11 +13,11 @@ angular.module('rts', [
         url: '/',
         controller: 'About'
       })
-      .state('game', {
-        templateUrl: 'gameroom/game.html',
-        url: '/game',
-        controller: 'Board'
-      })
+      // .state('game', {
+      //   templateUrl: 'gameroom/game.html',
+      //   url: '/game',
+      //   controller: 'Board'
+      // })
 
       $urlRouterProvider.otherwise('/');
 

@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-<html ng-app="rts">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>RTS Chess</title>
 </head>
+<!-- Custome CSS -->
 <link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/index.css">
 
+<!-- Angular-->
+<script src="/bower_modules/angular/angular.js"></script>
+<!-- Angular UI Bootstrap -->
+<!--<script src="/bower_modules/angular-bootstrap/ui-bootstrap.js"></script>-->
+<!-- Angular Foundation -->
+<script src="/bower_modules/angular-foundation/mm-foundation.js"></script>
+<!-- Angular UI router-->
+<script src="/bower_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<!-- Angular Animate -->
+<script src="/bower_modules/angular-animate/angular-animate.js"/></script>
 
-<body>
-  <div>
-    <h3>Just so I know something is here too.........</h3>
-    <a ui-sref="index">Homes</a>
-    <a ui-sref="game">Game</a>
-  </div>
+<!-- JS FILES-->
+<script src="app.js"></script>
+<script src="gameroom/boardFactory.js"></script>
+<script src="gameroom/boardCtrl.js"></script>
+<script src="main/mainCtrl.js"></script>
+
+<!-- HTML/ANGULAR-->
+<body ng-app="meetup">
+
+  <div class="row">
+    <div class="col-md-8">
+      <h3>TeamUp Cosplay</h3>
+    </div>
+    <div class="col-md-4 loginSelection">
+      <button class="button">Login</button>
+      <select name="Select a Project" id=""> Projects </select>
+    </div>
+    <!--<a ui-sref="index">Homes</a>-->
+    <!--<a ui-sref="game">Game</a>-->
+  </div class="col-md-12">
  <hr>
 
   <section class="container main" role="main">
     <div ui-view></div>
   </section>
 
-  <script src="/bower_modules/angular/angular.js"></script>
-  <script src="/bower_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="/bower_modules/angular-animate/angular-animate.js"/></script>
-  <script src="app.js"></script>
-  <script src="gameroom/boardFactory.js"></script>
-  <script src="gameroom/boardCtrl.js"></script>
-  <script src="main/mainCtrl.js"></script>
+  <hr>
+  <footer>
+    <div><p>Contribute</p></div>
+    <div><p>About Us</p></div>
+    <div><p>Contact Us</p></div>
+  </footer>
+
+
+
 </body>
 </html>
