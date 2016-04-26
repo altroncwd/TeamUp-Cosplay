@@ -17,6 +17,11 @@ Currently I will be using NPM for serverside logic and Bower for Client side log
 npm install
 bower install
 ```
+Currently the server is set up with node and set for local host 3000
+```
+node server/server.js
+```
+
 
 # Why I'm making this Template
 
