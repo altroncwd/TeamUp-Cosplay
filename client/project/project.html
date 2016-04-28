@@ -1,0 +1,29 @@
+<div>
+  <div class="col-md-12">
+    <div class="col-md-6 text-right testBlue">
+      <h3>Deadline : {{this.deadline}}</h3>
+    </div>
+
+    <div class="col-md-6 text-left testGrey">
+      <h4>Date : {{this.deadlineDate}}</h4>
+    </div>
+
+    <div class="col-md-12 text-center testPink">
+      <h4>Project Completion</h4>
+      <!-- Progress Bar-->
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-4 text-center" ng-repeat="costume in costumes">
+      <img src="" alt="">
+      <h4>{{costume.character}}</h4>
+      <h4>Progress :</h4>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-center">
+    <button class="button"> Add Costume +</button>
+  </div>
+
+</div>

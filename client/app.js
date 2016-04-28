@@ -3,7 +3,9 @@ angular.module('meetup', [
   'ui.router',
   'ngAnimate',
   'meetup.about',
-  'meetup.home'
+  'meetup.home',
+  'meetup.project',
+  'meetup.project.factory'
 ])
 // see zibzoo for more exmpales of how it works
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -14,9 +16,14 @@ angular.module('meetup', [
         controller: 'Home'
       })
       .state('about', {
-        templateUrl: 'main/mainView.html',
+        templateUrl: 'about/aboutView.html',
         url: '/about',
         controller: 'About'
+      })
+      .state('project', {
+        templateUrl: 'project/project.html',
+        url: '/project',
+        controller: 'Project'
       })
 
       $urlRouterProvider.otherwise('/');
