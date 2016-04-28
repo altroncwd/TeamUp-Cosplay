@@ -16,7 +16,7 @@ angular.module('meetup', [
         controller: 'Home'
       })
       .state('about', {
-        templateUrl: 'main/mainView.html',
+        templateUrl: 'about/aboutView.html',
         url: '/about',
         controller: 'About'
       })
