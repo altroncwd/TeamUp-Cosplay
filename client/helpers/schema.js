@@ -1,7 +1,9 @@
 var Project = function (projectName, projectOwner, eventDeadline, eventDeadlineDate, date) {
   this.projectName = projectName;
   this.projectOwner = projectOwner;
-  this.projectMembers = {};
+  this.projectMembers = {
+    owner : projectOwner
+  };
   this.eventDeadline = eventDeadline;
   this.eventDeadlineDate = eventDeadlineDate;
   this.projectCreated = date;
