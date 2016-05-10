@@ -5,7 +5,8 @@ angular.module('meetup', [
   'meetup.about',
   'meetup.home',
   'meetup.project',
-  'meetup.project.factory'
+  'meetup.project.factory',
+  'meetup.costume'
 ])
 // see zibzoo for more exmpales of how it works
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -20,11 +21,17 @@ angular.module('meetup', [
         url: '/about',
         controller: 'About'
       })
+
       .state('project', {
         templateUrl: 'project/project.html',
-        url: '/project',
+        url: '/project/:project',
         controller: 'Project'
       })
+        .state('costume', {
+          templateUrl: 'costume/costume.html',
+          url: '/costume',
+          controller: 'Costume'
+        })
 
       $urlRouterProvider.otherwise('/');
 
