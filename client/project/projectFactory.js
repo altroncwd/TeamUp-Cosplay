@@ -17,7 +17,7 @@ angular.module('meetup.project.factory', [])
     projectCreated : Date(),
     costumes : [
       { character : 'Guren',
-        refrenceImages : [],
+        refrenceImages : ['oneitem'],
         partsOfCostume : [
           { part: 'jacket',
             notes: 'needs to be cool',
