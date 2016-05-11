@@ -30,6 +30,18 @@ angular.module('meetup.project.factory', [])
               }
             ],
             partsImageRefrence : []
+          },
+          { part: 'pants',
+            notes: 'needs to be light and cool',
+            materialOptions : [
+              { image : 'http://google.com',
+                cost : 34,
+                location : 'Britex',
+                link : undefined,
+                weight : 'medium'
+              }
+            ],
+            partsImageRefrence : []
           }
         ],
       },
@@ -57,11 +69,26 @@ angular.module('meetup.project.factory', [])
 
 
 // should also store logic for retreiving/adding data to source
+var currentCostume = function (charName) {
+  console.log('looking for : ', charName);
+  var list = project.costumes;
+  for(var i = 0; i < list.length; i++) {
+      console.log(list[i].character);
+      if (list[i].character === charName) {
+        console.log('found it');
+        return list[i];
+      }
+    }
+  // edge case we find nothing so we can redirect
+  return null;
+}
+
 
 // should return an object with methods and refrence to data
 
 return {
-  project : project
+  project : project,
+  currentCostume : currentCostume
 }
 
   }]);
