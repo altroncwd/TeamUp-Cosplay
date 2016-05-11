@@ -1,3 +1,53 @@
 <div>
-  <h3> {{test}} </h3>
+  <div class="col-md-3 text-center">
+    <div>
+      <img src="" alt="">
+      <h3>{{currentCostume.character}}</h3>
+    </div>
+    <div>
+      <h3> Progress: ------ </h3>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="col-md-12">
+      <h3> Refrence Images</h3>
+      <div> images selection </div>
+      <p> slider bar here </p>
+
+    </div>
+
+    <div class="col-md-12" ng-repeat="parts in currentCostume.partsOfCostume">
+      <div class="col-md-12">
+        <div class="col-md-3">
+          <h3>{{parts.part}} :</h3>
+        </div>
+
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary btn-sm"> Refrences </button>
+        </div>
+
+        <div class="col-md-2 col-md-offset-3">
+          <button type="button" class="btn btn-primary btn-sm"> Compare </button>
+        </div>
+
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary btn-sm"> Remove </button>
+        </div>
+
+        <hr class="bold">
+
+        <p>{{parts.notes}}</p>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="col-md-12 text-center">
+    <button type="button" class="btn btn-primary btn-sm"> Add Part + </button>
+  </div>
+
 </div>
