@@ -10,7 +10,7 @@ header {
 }
 
 footer {
-
+  padding: 40px;
 }
 
 .loginSelection {
@@ -29,3 +29,35 @@ footer {
   background-color: lightpink;
 }
 
+hr.bold {
+  border-top: 2px solid black;
+}
+/*
+hr.style {
+  height: 30px;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr.style:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}*/
+
+img.icon {
+  width: 150px;
+  height: auto;
+  border: 2px solid black
+}
+
+div.stack {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
