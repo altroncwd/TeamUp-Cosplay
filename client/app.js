@@ -29,7 +29,7 @@ angular.module('meetup', [
       })
         .state('costume', {
           templateUrl: 'costume/costume.html',
-          url: '/costume',
+          url: '/project/:project/:costume',
           controller: 'Costume'
         })
 

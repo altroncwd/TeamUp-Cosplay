@@ -7,7 +7,6 @@ angular
     $scope.deadlineDate = ProjectFactory.project.eventDeadlineDate;
     $scope.costumes = ProjectFactory.project.costumes;
 
-    $stateParams.project = ProjectFactory.project.projectName
     // $scope.project = "Owari No Serfeph";
     console.log('----- $stateParams ----- ', $stateParams);
 
