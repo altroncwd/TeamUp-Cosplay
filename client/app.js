@@ -2,6 +2,7 @@ angular.module('meetup', [
   'ui.bootstrap',
   'ui.router',
   'ngAnimate',
+  'firebase',
   'meetup.about',
   'meetup.home',
   'meetup.project',
