@@ -1,6 +1,6 @@
 angular
   .module('meetup.project', [])
-  .controller('Project', ['$scope', '$state', '$stateParams', 'ProjectFactory', function ($scope, $state, $stateParams, ProjectFactory) {
+  .controller('Project', ['$scope', '$stateParams', 'ProjectFactory', function ($scope, $stateParams, ProjectFactory) {
     $scope.owner = ProjectFactory.project.owner;
     $scope.project = ProjectFactory.project.projectName;
     $scope.deadline = ProjectFactory.project.eventDeadline;
