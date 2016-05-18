@@ -4,6 +4,7 @@ module.exports = function (app, express) {
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../client'));
 
+// we want to have a midleware for each type of request for separation of concerns, and to make things more easy to read/follow
 
   app.get('/project/:projectName', function(req, res) {
     console.log("I'm Working :D");
@@ -21,6 +22,8 @@ module.exports = function (app, express) {
   // app.get('/todo', Auth(), function(req, res){
     // what happens, is Auth() will get run first, which can check for auth, 404 if no access, or say next() if they have auth
     // in which case it will then move to the func(req,res) section or midleware if provided
+
+    // can be separated by commas, or be passed an array of midleware, same thing
 
     // can be separated by commas, or be passed an array of midleware, same thing
   // })
@@ -44,6 +47,14 @@ module.exports = function (app, express) {
       // req.query.sort = name
   // })
 
+      // on its own this would return everything
+  // });
+  // app.get('/todo/:id', function(req,res){
+      // : indicates a secondary param to get something specific
+  // })
+  // app.get('/todo/?sort=name', function(req,res){
+      // ? indicates a query param (for filtering bulk data) which we can access via params?
+  // })
 
   // post is for sending something to our server
   // app.post('/todos', function(req,res){
@@ -63,7 +74,6 @@ module.exports = function (app, express) {
 
       // throw new Error('') will stop the application anywhere, but doesnt reslove the error
       // want to call next(err)
-
 
   // for future tests, we want to run tests first, then load our app...
 
