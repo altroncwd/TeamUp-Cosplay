@@ -1,4 +1,6 @@
 var bodyParser = require('body-parser');
+var mongoose = requre('mongoose');
+
 
 module.exports = function (app, express) {
   app.use(bodyParser.json());
@@ -10,6 +12,8 @@ module.exports = function (app, express) {
     console.log("I'm Working :D");
     var project = req.params.projectName;
     // need to make a db request for {project: project}
+
+
 
 
     res.send([project]);
