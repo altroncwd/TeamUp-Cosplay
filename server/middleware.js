@@ -11,12 +11,8 @@ module.exports = function (app, express) {
   app.get('/project/:projectName', function(req, res) {
     console.log("I'm Working :D");
     var project = req.params.projectName;
-    // need to make a db request for {project: project}
-
-
-
-
-    res.send([project]);
+    
+    // res.send([project]);
 
   })
 

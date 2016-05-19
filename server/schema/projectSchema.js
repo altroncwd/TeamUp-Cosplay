@@ -20,7 +20,7 @@ var ProjectSchema = new Schema ({
         eventDeadlineDate: string,      // Check me later, specific date property?
         projectCrated: string,          // dito
         costumes : {
-        costume : [ Costume ]   // this should allow an array only propogated with the Costume Schema
+            costume : [ Costume ]   // this should allow an array only propogated with the Costume Schema
         },                // Dont understand the array?
         lastLoggedIn : string,  
 });
