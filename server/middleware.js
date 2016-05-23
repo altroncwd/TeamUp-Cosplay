@@ -1,5 +1,5 @@
 var bodyParser = require('body-parser');
-var mongoose = requre('mongoose');
+var mongoose = require('mongoose');
 
 
 module.exports = function (app, express) {
@@ -11,7 +11,7 @@ module.exports = function (app, express) {
   app.get('/project/:projectName', function(req, res) {
     console.log("I'm Working :D");
     var project = req.params.projectName;
-    
+
     // res.send([project]);
 
   })
