@@ -19,16 +19,4 @@ module.exports = function (app, express) {
     })
 
 
-// we want to have a midleware for each type of request for separation of concerns, and to make things more easy to read/follow
-
-//   app.get('/project/:projectName', function(req, res) {
-//     console.log("I'm Working :D");
-//     var project = req.params.projectName;
-
-//     // res.send([project]);
-
-//   })
-
-// we want to have a midleware for each type of request for separation of concerns, and to make things more easy to read/follow
-
 };
