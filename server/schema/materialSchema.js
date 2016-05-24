@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Materials = new Schema({
-    image : { type: string, required : true },  // revist this for how i store images...
-    cost : string,
-    location : string,
-    link : string,
-    weight : string,
+    image : { type: String, required : true },  // revist this for how i store images...
+    cost : String,
+    location : String,
+    link : String,
+    weight : String,
 });
 
 

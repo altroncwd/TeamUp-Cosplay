@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 
 var MemberSchema = new Schema ({
-   generatedKey : { type : string,  required : true},
-   userName : String 
+   generatedKey : { type : String,  required : true},
+   userName : String
 });
 
 module.exports = mongoose.model ('Member', MemberSchema );

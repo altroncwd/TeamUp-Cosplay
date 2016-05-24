@@ -1,10 +1,11 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
+var mongoose  = require('mongoose');
+var Schema    = mongoose.Schema;
+var Member    = require('./memberSchema.js');
+var Costume   = require('./costumeSchema.js');
 
 var ProjectSchema = new Schema ({
         project : {
-            type : string,
+            type : String,
             unique : true,
             required : true
         },
@@ -12,17 +13,17 @@ var ProjectSchema = new Schema ({
         //     type : string,
         //     required: true
         // },
-        projectMembers = {
-            owner : { type : string, required : true },
+        projectMembers : {
+            owner : { type : String, required : true },
             member : [ Member ]
         },    // Double check me, is ther a way to just make an hash conatiner for members, or do i need to use an array
-        eventDeadline : string,
-        eventDeadlineDate: string,      // Check me later, specific date property?
-        projectCrated: string,          // dito
+        eventDeadline : String,
+        eventDeadlineDate: String,      // Check me later, specific date property?
+        projectCrated: String,          // dito
         costumes : {
             costume : [ Costume ]   // this should allow an array only propogated with the Costume Schema
         },                // Dont understand the array?
-        lastLoggedIn : string,  
+        lastLoggedIn : String,
 });
 
 module.exports = mongoose.model('Project', ProjectSchema );

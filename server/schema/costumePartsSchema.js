@@ -1,12 +1,12 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
+var mongoose  = require('mongoose');
+var Schema    = mongoose.Schema;
+var Materials = require('./materialSchema.js');
 
 var CostumePartsSchema = new Schema ({
-   part : { type : string,  required : true},
-   notes : string,
+   part : { type : String,  required : true},
+   notes : String,
    materialOptions : { materials : [ Materials ]},
-   partsImageRefrences : { any: {} }    // revisit this later 
+   partsImageRefrences : Object    // revisit this later
 });
 
 module.exports = mongoose.model ('CostumeParts', CostumePartsSchema );

@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var Schema   = mongoose.Schema;
+var Image    = require('./refrencePictureSchema.js');
+var Parts    = require('./costumePartsSchema.js');
 
 var CostumeSchema = new Schema ({
-    character : { type : string,  required : true},
-    refrenceImages : { images : [ any ]},   // revisit me for storaing images...
+    character : { type : String,  required : true},
+    refrenceImages : [ Image ],   // revisit me for storaing images...
     partsOfCostume : { parts : [ Parts ]}
 })
 
