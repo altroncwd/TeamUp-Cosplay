@@ -4,22 +4,22 @@ var Member    = require('./memberSchema.js');
 var Costume   = require('./costumeSchema.js');
 
 var ProjectSchema = new Schema ({
-        project : {
+        projectName : {
             type : String,
             unique : true,
             required : true
         },
-        // projectOwner : {         // Going to remove projectOwner, in favor of having that in the projectMembers as a key, along side the existing array of other memebers
-        //     type : string,
-        //     required: true
-        // },
+        projectOwner : {         // Going to remove projectOwner, in favor of having that in the projectMembers as a key, along side the existing array of other memebers
+            type : String,
+            required: true
+        },
         projectMembers : {
-            owner : { type : String, required : true },
+            // owner : { type : String, required : true },
             member : [ Member ]
         },    // Double check me, is ther a way to just make an hash conatiner for members, or do i need to use an array
         eventDeadline : String,
         eventDeadlineDate: String,      // Check me later, specific date property?
-        projectCrated: String,          // dito
+        projectCreated: String,          // dito
         costumes : {
             costume : [ Costume ]   // this should allow an array only propogated with the Costume Schema
         },                // Dont understand the array?
