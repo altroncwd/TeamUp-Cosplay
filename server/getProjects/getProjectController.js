@@ -1,27 +1,14 @@
+var GET = require('./getProjectRouter.js');
+
 module.exports = function (app, express) {
 
-    app.get('/project', function(req, res) {
+    // we pass the projects name as a project params
+    app.get('/project/:project', GET.getProject);
 
-        res.status(200).send("Awesome");
-    });
-    app.get('/member', function(req, res) {
-
-    });
-    app.get('/costume', function(req, res) {
-
-    });
-    app.get('/part', function(req, res) {
-
-    });
-    app.get('/material', function(req, res) {
-
-    });
-    app.get('/picture', function(req, res) {
-
-    });
-
-    app.use('*', function (req, res) {
-        res.status(404).send('404: Page not found');
-    })
+    // app.get('/member', GET.getMember);
+    // app.get('/costume', Get.getCostume);
+    // app.get('/part', GET.getCostumeParts);
+    // app.get('/material', GET.getMaterial);
+    // app.get('/picture', GET.getPicture);
 
 };

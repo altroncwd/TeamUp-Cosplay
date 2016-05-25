@@ -1,29 +1,17 @@
+var Post = require('./postProjectRouter.js');
+
 module.exports = function (app, express) {
 
-    app.post('/project', function(req, res) {
+    app.post('/project', Post.addProject);
 
-        // console.log('something just came through');
+    app.post('/member', Post.addMember);
 
-        res.status(200).send("Awesome");
-    });
-    app.post('/member', function(req, res) {
+    app.post('/costume', Post.addCostume);
 
-    });
-    app.post('/costume', function(req, res) {
+    app.post('/part', Post.addCostumeParts);
 
-    });
-    app.post('/part', function(req, res) {
+    app.post('/material', Post.addMaterial);
 
-    });
-    app.post('/material', function(req, res) {
-
-    });
-    app.post('/picture', function(req, res) {
-
-    });
-
-    app.use('*', function (req, res) {
-        res.status(404).send('404: Page not found');
-    })
+    app.post('/picture', Post.addRefrencePicture);
 
 };
