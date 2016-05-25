@@ -1,16 +1,29 @@
-var projectSchema         = require('../schema/projectSchema.js');
-var memberSchema          = require('../schema/memberSchema.js');
-var costumeSchema         = require('../schema/costumeSchema.js');
-var costumePartsSchema    = require('../schema/costumePartsSchema.js');
-var materialSchema        = require('../schema/materialSchema.js');
-var refrencePictureSchema = require('../schema/refrencePictureSchema.js');
+var Project         = require('../schema/projectSchema.js');
+var Member          = require('../schema/memberSchema.js');
+var Costume         = require('../schema/costumeSchema.js');
+var CostumeParts    = require('../schema/costumePartsSchema.js');
+var Material        = require('../schema/materialSchema.js');
+var RefrencePicture = require('../schema/refrencePictureSchema.js');
 
 console.log("Project Router");
 
 
 module.exports = {
-  getProject : function () {
+  getProject : function (req, res, next) {
     // should return the project you need
+    console.log('I got this far');
+    var nameOfProject = req.params.project;
+    Project.find({projectName: nameOfProject}, function (err, data){
+        console.log("---", data[0]);
+        // var project = {};
+
+        // Cant seem to get my data back here for whatever reason
+        // I can log it and its there but It cant seem to be returned
+
+        // res.send(data[0]);
+        res.json(data[0]); // why do you work...
+    });
+
   },
 
   getMember : function () {
