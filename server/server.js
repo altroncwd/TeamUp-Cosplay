@@ -1,19 +1,10 @@
-var express = require('express');
-var app = express();
+var app = require('./serverConfig.js');
 var server = require('http').createServer(app);
 
-var port = process.env.PORT || 3000;
-
-require('./middleware.js')(app, express);
-// app.use(function(req, res) {
-
-//   var data = __dirname + '/../client';
-//   res.writeHead(200, { 'Content-Type': 'text/html' });
-//   res.end(data);
-
-// });
+console.log("Starting up the server");
+var PORT = process.env.PORT || 3000;
 
 
-server.listen(port);
 
-console.log("server is running : ", port );
+server.listen(PORT);
+console.log("Server is now running at PORT:", PORT );

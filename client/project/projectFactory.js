@@ -1,70 +1,95 @@
 angular.module('meetup.project.factory', [])
-  .factory('ProjectFactory', ['$state', function ($state) {
+  .factory('ProjectFactory', ['$state', '$stateParams', '$http', function ($state, $stateParams, $http) {
 // the factory should store data
 
-  // var project = {};
+  var project = {};
+
+  // LOGIC :
+  // Have a check on the stateParam, if the project is diffrent then whats loaded, run the function again to get the appropriate project, otherwise dont do the get request.
+  console.log("I'm in the factory : ", $stateParams.project)
+  var getProject = function () {
+      console.log("about to look for our project : ", $stateParams.project );
+      projectGet = '/project/' + this.project;
+      $http({
+        method: 'GET',
+        url: projectGet
+      }). then(function(response) {
+        // remember response is the whole thing, including the 400, the data property is what we actualy want/get back
+
+        console.log("RESPONSE : ", response);
+        project = response.data;
+
+      }, function (response) {
+        // error response
+      }  )
+    }
+
+  if( project == undefined || project.projectName !== $stateParams.project){
+    getProject();
+  }
+
 
 // TEMP TEST DATA: -----------------------------------
-  var project = {
-    projectName : 'Owari no Sereph' ,
-    projectOwner : 'Chris',
-    projectMembers : {
-      owner : 'Chris',
-      as7g6d78g9 : 'John'
-    },
-    eventDeadline : "AnimeExpo",
-    eventDeadlineDate : "7/1/16",
-    projectCreated : Date(),
-    costumes : [
-      { character : 'Guren',
-        refrenceImages : ['oneitem'],
-        partsOfCostume : [
-          { part: 'jacket',
-            notes: 'needs to be cool',
-            materialOptions : [
-              { image : 'http://google.com',
-                cost : 34,
-                location : 'Britex',
-                link : undefined,
-                weight : 'medium'
-              }
-            ],
-            partsImageRefrence : []
-          },
-          { part: 'pants',
-            notes: 'needs to be light and cool',
-            materialOptions : [
-              { image : 'http://google.com',
-                cost : 34,
-                location : 'Britex',
-                link : undefined,
-                weight : 'medium'
-              }
-            ],
-            partsImageRefrence : []
-          }
-        ],
-      },
-      { character : 'Ferid',
-        refrenceImages : [],
-        partsOfCostume : [
-          { part: 'cloak',
-            notes: 'needs to be fab',
-            materialOptions : [
-              { image : 'http://google.com',
-                cost : 20,
-                location : 'Britex',
-                link : undefined,
-                weight : 'light'
-              }
-            ],
-            partsImageRefrence : []
-          }
-        ],
-      }
-    ],
-    lastLoggedIn : undefined
-  }
+  // var project = {
+  //   projectName : 'Owari no Sereph' ,
+  //   projectOwner : 'Chris',
+  //   projectMembers : {
+  //     owner : 'Chris',
+  //     as7g6d78g9 : 'John'
+  //   },
+  //   eventDeadline : "AnimeExpo",
+  //   eventDeadlineDate : "7/1/16",
+  //   projectCreated : Date(),
+  //   costumes : [
+  //     { character : 'Guren',
+  //       refrenceImages : ['oneitem'],
+  //       partsOfCostume : [
+  //         { part: 'jacket',
+  //           notes: 'needs to be cool',
+  //           materialOptions : [
+  //             { image : 'http://google.com',
+  //               cost : 34,
+  //               location : 'Britex',
+  //               link : undefined,
+  //               weight : 'medium'
+  //             }
+  //           ],
+  //           partsImageRefrence : []
+  //         },
+  //         { part: 'pants',
+  //           notes: 'needs to be light and cool',
+  //           materialOptions : [
+  //             { image : 'http://google.com',
+  //               cost : 34,
+  //               location : 'Britex',
+  //               link : undefined,
+  //               weight : 'medium'
+  //             }
+  //           ],
+  //           partsImageRefrence : []
+  //         }
+  //       ],
+  //     },
+  //     { character : 'Ferid',
+  //       refrenceImages : [],
+  //       partsOfCostume : [
+  //         { part: 'cloak',
+  //           notes: 'needs to be fab',
+  //           materialOptions : [
+  //             { image : 'http://google.com',
+  //               cost : 20,
+  //               location : 'Britex',
+  //               link : undefined,
+  //               weight : 'light'
+  //             }
+  //           ],
+  //           partsImageRefrence : []
+  //         }
+  //       ],
+  //     }
+  //   ],
+  //   lastLoggedIn : undefined
+  // }
 // ---------------------------------------------------
 
 
@@ -92,55 +117,3 @@ return {
 }
 
   }]);
-
-//----------- PROJECT SCHEMA -----------
-
-// { projectName = 'Owari no Sereph' ,
-//   projectOwner = 'Chris',
-//   projectMembers = {
-//     owner : 'Chris',
-//     as7g6d78g9 : 'John'
-//   }
-//   eventDeadline = "AnimeExpo",
-//   eventDeadlineDate = "7/1/16",
-//   projectCreated = Date(),
-//   costumes = [
-//     { character : 'Guren',
-//       refrenceImages : [],
-//       partsOfCostume : [
-//         { part: 'jacket',
-//           notes: 'needs to be cool',
-//           materialOptions : [
-//             { image : 'http://google.com',
-//               cost : 34,
-//               location : 'Britex',
-//               link : undefined,
-//               weight : 'medium'
-//             }
-//           ],
-//           partsImageRefrence : []
-//         }
-//       ],
-//     },
-//     { character : 'Ferid',
-//       refrenceImages : [],
-//       partsOfCostume : [
-//         { part: 'cloak',
-//           notes: 'needs to be fab',
-//           materialOptions : [
-//             { image : 'http://google.com',
-//               cost : 20,
-//               location : 'Britex',
-//               link : undefined,
-//               weight : 'light'
-//             }
-//           ],
-//           partsImageRefrence : []
-//         }
-//       ],
-//     }
-//   ];
-//   lastLoggedIn = undefined;
-// }
-
-
