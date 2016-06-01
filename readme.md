@@ -6,7 +6,7 @@ The premis of this project is to create a simple web application for organizing 
 The project readme will be updated with current information but possible technologies that my get included however currently plan to use.
 - AngularJS
    -AngularAnimation
-- Firebase
+- Mongo/Mongoose
 - Express
 - Node
 
@@ -16,13 +16,16 @@ Currently I will be using NPM for serverside logic and Bower for Client side log
 ```
 npm install
 bower install
+mongod
+mongo (if you want to look through manualy)
 ```
 Currently the server is set up with node and set for local host 3000
 ```
-node server/server.js
+nodemon server/server.js
 ```
 
 
 # Why I'm making this Template
 
 Because I would like to make an easy place to colaborate and consolodate images, refrence and discussion.
+There is still quite a bit to do but I hope to do it slowly but surely.
