@@ -11,7 +11,7 @@ console.log("Project Router");
 module.exports = {
   getProject : function (req, res, next) {
     // should return the project you need
-    console.log('I got this far');
+    console.log('we are looking for : ', req.params.project);
     var nameOfProject = req.params.project;
     Project.find({projectName: nameOfProject}, function (err, data){
         console.log("---", data[0]);
