@@ -1,33 +1,28 @@
 angular.module('meetup.project.factory', [])
-  .factory('ProjectFactory', ['$state', '$stateParams', '$http', function ($state, $stateParams, $http) {
+  .factory('ProjectFactory', ['$state', '$stateParams', '$http', '$q', function ($state, $stateParams, $http, $q) {
 // the factory should store data
-
   var project = {};
 
   // LOGIC :
   // Have a check on the stateParam, if the project is diffrent then whats loaded, run the function again to get the appropriate project, otherwise dont do the get request.
-  console.log("I'm in the factory : ", $stateParams.project)
+
   var getProject = function () {
-      console.log("about to look for our project : ", $stateParams.project );
-      projectGet = '/project/' + this.project;
       $http({
         method: 'GET',
-        url: projectGet
+        url: '/project/' + $stateParams.project
       }). then(function(response) {
-        // remember response is the whole thing, including the 400, the data property is what we actualy want/get back
-
-        console.log("RESPONSE : ", response);
+        // console.log("RESPONSE : ", response);
         project = response.data;
-
-      }, function (response) {
-        // error response
-      }  )
+        console.log(project);
+      }, function (err) {
+        // error err
+      })
     }
+    // Need to resolve the update and have angular properly display info.
 
   if( project == undefined || project.projectName !== $stateParams.project){
     getProject();
   }
-
 
 // TEMP TEST DATA: -----------------------------------
   // var project = {
@@ -92,6 +87,8 @@ angular.module('meetup.project.factory', [])
   // }
 // ---------------------------------------------------
 
+
+//Rewrite this later, I can just use angular repete index position to refrence the costume.
 
 // should also store logic for retreiving/adding data to source
 var currentCostume = function (charName) {
