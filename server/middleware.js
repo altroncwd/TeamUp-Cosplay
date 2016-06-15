@@ -1,7 +1,5 @@
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var postProject = require('./postProjects/postProjectRouter.js');
-var getProject = require('./getProjects/getProjectRouter.js');
 
 module.exports = function (app, express) {
     app.use(bodyParser.json());
@@ -12,6 +10,9 @@ module.exports = function (app, express) {
     require('./postProjects/postProjectController.js')(app, express);
     // all get requests
     require('./getProjects/getProjectController.js')(app, express);
+    // all put requests
+    require('./updateProjects/updateProjectController.js')(app,express);
+
 
     // any unmatched requests
     app.use('*', function (req, res) {

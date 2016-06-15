@@ -10,13 +10,11 @@ console.log("Project Router");
 module.exports = {
   addProject : function (req, res, next) {
     // should create a new project with a project name, owner/creator, and date created.
-    console.log("in the addProjectMethod");
     var projectInfo = req.body;
-    console.log(projectInfo);
+    console.log("adding new project", projectInfo);
     var newProject = new projectSchema({
       projectName : projectInfo.projectName,
-      projectOwner : projectInfo.projectOwner,
-      ProjectCreated : Date(),
+      projectOwner : projectInfo.projectOwner
     });
 
     newProject.save()
