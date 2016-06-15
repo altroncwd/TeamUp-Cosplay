@@ -5,16 +5,26 @@ var CostumeParts    = require('../schema/costumePartsSchema.js');
 var Material        = require('../schema/materialSchema.js');
 var RefrencePicture = require('../schema/refrencePictureSchema.js');
 
-console.log("Project Router");
-
 
 module.exports = {
-  getProject : function (req, res, next) {
+  getAllProjects : function (req, res, next) {
+    Project.find({}, function (err, allProjects) {
+      if(err) {
+        res.status(404).send("Woops", console.dir(err));
+      } else {
+        res.status(200).send(allProjects);
+      }
+    })
+  },
+
+  getProjectByName : function (req, res, next) {
     // should return the project you need
     console.log('we are looking for : ', req.params.project);
     var nameOfProject = req.params.project;
     Project.find({projectName: nameOfProject}, function (err, data){
-        console.log("---", data[0]);
+
+      // have something for edge cases of not finding a project but its not an error
+        console.log("---", data);
         // var project = {};
 
         // Cant seem to get my data back here for whatever reason
