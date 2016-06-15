@@ -1,17 +1,17 @@
-var Post = require('./postProjectRouter.js');
+var POST = require('./postProjectRouter.js');
 
 module.exports = function (app, express) {
 
-    app.post('/project', Post.addProject);
+    app.post('/project', POST.addProject);
 
-    app.post('/member', Post.addMember);
+    app.post('/member', POST.addMember);
 
-    app.post('/costume', Post.addCostume);
+    app.post('/costume', POST.addCostume);
 
-    app.post('/part', Post.addCostumeParts);
+    app.post('/part', POST.addCostumeParts);
 
-    app.post('/material', Post.addMaterial);
+    app.post('/material', POST.addMaterial);
 
-    app.post('/picture', Post.addRefrencePicture);
+    app.post('/picture', POST.addRefrencePicture);
 
 };
